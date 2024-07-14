@@ -138,19 +138,19 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">S<sup>2</sup>NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</span>
+		<span style="font-size:36px">NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</span>
 		<table align=center width=600px>
 			<table align=center width=1200px>
 				<br>
 				<tr>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://zhongqunzhang.github.io/">Zhongqun Zhang<sup>*</sup></a></span>
+							<span style="font-size:24px"><a href="https://zhongqunzhang.github.io/">Zhongqun Zhang</a></span>
 						</center>
 					</td>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://hengfei-wang.github.io/">Hengfei Wang<sup>*</sup></a></span>
+							<span style="font-size:24px"><a href="https://hengfei-wang.github.io/">Hengfei Wang</a></span>
 						</center>
 					</td>
 					<td align=center width=160px>
@@ -178,12 +178,12 @@
 			<br>
 
 			<center>
-				<span style="font-size:20px">University of Birmingham, UNIST, SUSTech
+				<span style="font-size:20px">University of Birmingham, National University of Singapore (NUS)
 					</span>
 			</center>
 
 			<center>
-				<span style="font-size:20px">ECCV 2022
+				<span style="font-size:20px">ECCV 2024
 					</span>
 			</center>
 				
@@ -193,12 +193,12 @@
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610561.pdf'>[Paper]</a></span>
+							<span style="font-size:24px"><a href=''>[arXiv]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/eldentse/s2contact'>[Code]</a></span><br>
+							<span style="font-size:24px"><a href=''>[Data]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -212,7 +212,7 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:750px" src="./resources/Fig1.png"/>
+						<img class="round" style="width:750px" src="./resources/Fig1.PNG"/>
 					</center>
 				</td>
 			</tr>
@@ -220,21 +220,21 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					Overview of our semi-supervised learning framework, S<sup>2</sup>Contact. (a) The model
-					is pre-trained on a small annotated dataset. (b) Then, it is deployed on unlabelled
-					datasets to collect pseudo-labels. The pseudo-labels are filtered with confidence-based
-					on visual and geometric consistencies. Upon predicting the contact map, the hand and
-					object poses are optimised to achieve target contact via a contact model.
+					Overview of the NL2Contact setting.
+					Our method learns to model 3D hand-object contact from language description. 
+					The modeling contact can be used to grasp pose optimization. 
+					By utilizing the predicted contact to refine the initial grasp, our performance surpasses that of ContactOpt and ContactPose. 
+					It's worth noting that ContactPose is the annotation from the motion capture system. 
 				</td>
 			</tr>
 		</table>
 	</center>
 
-	<hr>
+	<!-- <hr>
 	<center><h1>Video</h1></center>
 	<p align="center">
 		<iframe width="660" height="395" src="https://www.youtube.com/embed/BJdD-bANW-g?si=S4Hkxgu1ESEwV89w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p> 
+	</p>  -->
 
 	<hr>
 
@@ -242,24 +242,15 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Being able to reason about the physical contacts between
-				hands and objects is crucial in understanding hand-object manipulation. However, despite the efforts in accurate 3D annotations in hand
-				and object datasets, there still exist gaps in 3D hand and object reconstructions. Recent works leverage contact maps to refine inaccurate
-				hand-object pose estimations and generate grasps given object models.
-				However, they require explicit 3D supervision which is seldom available
-				and therefore, are limited to constrained settings, e.g., where thermal
-				cameras observe residual heat left on manipulated objects. In this paper, we propose a novel semi-supervised framework that allows us to
-				learn contact from monocular videos. Specifically, we leverage visual and
-				geometric consistency constraints in large-scale datasets for generating
-				pseudo-labels in semi-supervised learning and propose an efficient graph-
-				based network to infer contact. Our semi-supervised learning framework
-				achieves a favourable improvement over the existing supervised learning
-				methods trained on data with ‘limited’ annotations. Notably, our proposed model is able to achieve superior results with less than half the
-				network parameters and memory access cost when compared with the
-				commonly-used PointNet-based approach. We show benefits from using
-				a contact map that rules hand-object interactions to produce more accurate reconstructions. We further demonstrate that training with pseudo-
-				labels can extend contact map estimations to out-of-domain objects and
-				generalise better across multiple datasets.
+				Modeling the physical contacts between the hand and object is standard for refining inaccurate hand poses and generating novel human grasp in 3D hand-object reconstruction.
+				However, existing methods rely on geometric constraints that cannot be specified or controlled.
+				This paper introduces a novel task of controllable 3D hand-object contact modeling with natural language descriptions. Challenges include
+				i) the complexity of cross-modal modeling from language to contact, and ii) a lack of descriptive text for contact patterns.
+				To address these issues, we propose NL2Contact, a model that generates controllable contacts by leveraging staged diffusion models. 
+				Provided with a language description of the hand and contact, NL2Contact generates realistic and faithful 3D hand-object contacts. 
+				To train the model, we build ContactDescribe, the first dataset with hand-centered contact descriptions. 
+				It contains multi-level and diverse descriptions generated by large language models, based on carefully designed prompts (e.g. grasp action, grasp type, contact location, free finger status). 
+				We show applications of our model to grasp pose optimization and novel human grasp generation, both based on a textual contact description.
 			</td>
 		</tr>
 	</table>
@@ -305,17 +296,48 @@
 		<center>
 			<tr>
 				<td align=center width=400px>
-					A schematic illustration of our framework. We adopt our proposed graph-based network GCN-Contact
-					as backbone. We utilise a teacher-student mutual learning framework which is composed of a learnable student and an EMA teacher. The student network is trained
-					with labelled data. For unlabelled data, the student network takes pseudo
-					contact labels from its EMA teacher and compares with its predictions. (a) refers to contact
-					consistency constraint for consistency training. To improve the quality of pseudo-label,
-					we adopt a confidence-based filtering mechanism to geometrically (b) and visually (c)
-					filter out predictions that violate contact constraints.
+					NL2Contact pipeline. 
+					We propose a novel method to model 3D hand-object contact using language description. 
+					Our framework is composed of 1) a Text-to-Hand-Object Fusion module, efficiently fusing the geometry information from both point clouds and semantic information from natural language, 
+					2) a staged latent diffusion model to first generate the hand pose fitting the hand description and then generate the 3D hand-object contact map conditioned on the descriptions and the generated hand pose. 
+					3) contact optimization, which iteratively optimizes the hand pose using the generated contact. We also added a switch to toggle between its application for grasp pose optimization and human grasp generation.
 				</td>
 			</tr>
 		</center>
 	</table>
+
+	<hr>
+
+	<center><h1>Dataset</h1></center>
+
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table>
+	<table align=center width=400px>
+		<tr>
+			<td align=center width=600px>
+				<center>
+					<td><img class="round" style="width:600px" src="./resources/Fig3.png"/></td>
+				</center>
+			</td>
+		</tr>
+	</table>
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td align=center width=400px>
+					An example of the dataset with multi-level language descriptions. 
+					Given the proposed hand-centered contact prompts, our dataset leverages ChatGPT3 to generate multi-level and diverse free-form text descriptions of contact patterns.
+				</td>
+			</tr>
+		</center>
+	</table>
+
 <!-- 	<table align=center width=800px>
 		<br>
 		<tr><center>
@@ -329,9 +351,9 @@
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">Tze Ho Elden Tse, Zhongqun Zhang, Kwang In Kim, Ales Leonardis, Feng Zheng and Hyung Jin Chang<br>
-				<b>S<sup>2</sup>Contact: Graph-based Network for 3D Hand-Object Contact Estimation with Semi-Supervised Learning</b><br>
-				In ECCV, 2022.<br>
+			<td><span style="font-size:14pt">Zhongqun Zhang, Hengfei Wang, Ziwei Yu, Yihua Cheng, Angela Yao and Hyung Jin Chang<br>
+				<b>NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</b><br>
+				In ECCV, 2024.<br>
 <!-- 				(hosted on <a href="">ArXiv</a>)<br> -->
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
@@ -348,11 +370,11 @@
 			</center></td> -->
 				
 			<td align=center><span style="font-size:14pt"><center>
-				<a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136610561.pdf">[Paper]</a>
+				<a href="">[Paper]</a>
 			</center></td>
 			
 			<td align=center><span style="font-size:14pt"><center>
-				<a href="https://arxiv.org/pdf/2208.00874.pdf">[Supplementary]</a>
+				<a href="">[Supplementary]</a>
 			</center></td>
 		</tr>
 	</table>
@@ -365,17 +387,7 @@
 			<td width=400px>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This research was supported by the MSIT (Ministry of Science and ICT), Korea, under the ITRC 
-					(Information Technology Research Center) support program (IITP--2022--2020--0--01789) supervised 
-					by the IITP (Institute of Information \& Communications Technology Planning \& Evaluation) and 
-					the Baskerville Tier 2 HPC service (https://www.baskerville.ac.uk/) funded by the Engineering 
-					and Physical Sciences Research Council (EPSRC) and UKRI through the World Class Labs scheme (EP/T022221/1)
-					and the Digital Research Infrastructure programme (EP/W032244/1) operated by Advanced Research Computing 
-					at the University of Birmingham. KIK was supported by the National Research Foundation of Korea (NRF) 
-					grant (No. 2021R1A2C2012195) and IITP grants (IITP--2021--0--02068 and IITP--2020--0--01336). ZQZ was 
-					supported by China Scholarship Council (CSC) Grant No. 202208060266. AL was supported in part by the EPSRC 
-					(grant number EP/S032487/1). FZ was supported by the National Natural Science Foundation of China under 
-					Grant No. 61972188 and 62122035.
+					This research/project is supported by the National Research Foundation Singapore and DSO National Laboratories under the AI Singapore Programme (Award Number: AISG2-RP-2020-016), China Scholarship Council (CSC) Grant No. 202208060266.
 					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
 				</left>
 			</td>
