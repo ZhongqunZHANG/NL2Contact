@@ -1,115 +1,135 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 
 <style type="text/css">
 	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-weight:300;
-		font-size:18px;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 18px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 1100px;
 	}
-	
+
 	h1 {
-		font-size:32px;
-		font-weight:300;
+		font-size: 32px;
+		font-weight: 300;
 	}
-	
+
 	.disclaimerbox {
-		background-color: #eee;		
+		background-color: #eee;
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 		padding: 20px;
 	}
 
 	video.header-vid {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.header-img {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.rounded {
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
-	a:link,a:visited
-	{
+
+	a:link,
+	a:visited {
 		color: #1367a7;
 		text-decoration: none;
 	}
+
 	a:hover {
 		color: #208799;
 	}
-	
+
 	td.dl-link {
 		height: 160px;
 		text-align: center;
 		font-size: 22px;
 	}
-	
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
 
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
 
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
 		margin-top: 5px;
 		margin-left: 10px;
 		margin-right: 30px;
 		margin-bottom: 5px;
 	}
-	
+
 	.vert-cent {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	
-	hr
-	{
+
+	hr {
 		border: 0;
 		height: 1px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -117,18 +137,20 @@
 </style>
 
 <html>
+
 <head>
 	<title>NL2Contact ECCV 2024</title>
-	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:image" content="Path to my teaser.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="Creative and Descriptive Paper Title." />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src=""></script> 
+	<script async src=""></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'UA-75863369-6');
@@ -138,19 +160,22 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</span>
+		<span style="font-size:36px">NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion
+			Model</span>
 		<table align=center width=600px>
 			<table align=center width=1200px>
 				<br>
 				<tr>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://zhongqunzhang.github.io/">Zhongqun Zhang</a></span>
+							<span style="font-size:24px"><a href="https://zhongqunzhang.github.io/">Zhongqun
+									Zhang</a></span>
 						</center>
 					</td>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://hengfei-wang.github.io/">Hengfei Wang</a></span>
+							<span style="font-size:24px"><a href="https://hengfei-wang.github.io/">Hengfei
+									Wang</a></span>
 						</center>
 					</td>
 					<td align=center width=160px>
@@ -165,12 +190,14 @@
 					</td>
 					<td align=center width=160px>
 						<center>
-							<span style="font-size:24px"><a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a></span>
+							<span style="font-size:24px"><a href="https://www.comp.nus.edu.sg/~ayao/">Angela
+									Yao</a></span>
 						</center>
 					</td>
 					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://hyungjinchang.wordpress.com/">Hyung Jin Chang</a></span>
+							<span style="font-size:24px"><a href="https://hyungjinchang.wordpress.com/">Hyung Jin
+									Chang</a></span>
 						</center>
 					</td>
 				</tr>
@@ -179,35 +206,36 @@
 
 			<center>
 				<span style="font-size:20px">University of Birmingham, National University of Singapore (NUS)
-					</span>
+				</span>
 			</center>
 
 			<center>
 				<span style="font-size:20px">ECCV 2024
-					</span>
+				</span>
 			</center>
-				
-			</table>
-			<br>
-			<table align=center width=800px>
-				<tr>
-					<td align=center width=120px>
-						<center>
-							<span style="font-size:24px"><a href='https://arxiv.org/pdf/2407.12727'>[arXiv]</a></span>
-						</center>
-					</td>
-					<td align=center width=120px>
-						<center>
-							<span style="font-size:24px"><a href=''>[Code (coming soon)]</a></span>
-						</center>
-					</td>
-					<td align=center width=120px>
-						<center>
-							<span style="font-size:24px"><a href='https://drive.google.com/drive/folders/12CbApIEYj-8w1rIG_a2zLs1hr0wIywz8?usp=drive_link'>[Data]</a></span><br>
-						</center>
-					</td>
-				</tr>
-			</table>
+
+		</table>
+		<br>
+		<table align=center width=800px>
+			<tr>
+				<td align=center width=120px>
+					<center>
+						<span style="font-size:24px"><a href='https://arxiv.org/pdf/2407.12727'>[arXiv]</a></span>
+					</center>
+				</td>
+				<td align=center width=120px>
+					<center>
+						<span style="font-size:24px"><a href=''>[Code (coming soon)]</a></span>
+					</center>
+				</td>
+				<td align=center width=120px>
+					<center>
+						<span style="font-size:24px"><a
+								href='https://drive.google.com/drive/folders/12CbApIEYj-8w1rIG_a2zLs1hr0wIywz8?usp=drive_link'>[Data]</a></span><br>
+					</center>
+				</td>
+			</tr>
+		</table>
 		</table>
 	</center>
 
@@ -217,7 +245,7 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:750px" src="./resources/Fig1.PNG"/>
+						<img class="round" style="width:750px" src="./resources/Fig1.PNG" />
 					</center>
 				</td>
 			</tr>
@@ -226,10 +254,11 @@
 			<tr>
 				<td>
 					Overview of the NL2Contact setting.
-					Our method learns to model 3D hand-object contact from language description. 
-					The modeling contact can be used to grasp pose optimization. 
-					By utilizing the predicted contact to refine the initial grasp, our performance surpasses that of ContactOpt and ContactPose. 
-					It's worth noting that ContactPose is the annotation from the motion capture system. 
+					Our method learns to model 3D hand-object contact from language description.
+					The modeling contact can be used to grasp pose optimization.
+					By utilizing the predicted contact to refine the initial grasp, our performance surpasses that of
+					ContactOpt and ContactPose.
+					It's worth noting that ContactPose is the annotation from the motion capture system.
 				</td>
 			</tr>
 		</table>
@@ -244,30 +273,39 @@
 	<hr>
 
 	<table align=center width=850px>
-		<center><h1>Abstract</h1></center>
+		<center>
+			<h1>Abstract</h1>
+		</center>
 		<tr>
 			<td>
-				Modeling the physical contacts between the hand and object is standard for refining inaccurate hand poses and generating novel human grasp in 3D hand-object reconstruction.
+				Modeling the physical contacts between the hand and object is standard for refining inaccurate hand
+				poses and generating novel human grasp in 3D hand-object reconstruction.
 				However, existing methods rely on geometric constraints that cannot be specified or controlled.
-				This paper introduces a novel task of controllable 3D hand-object contact modeling with natural language descriptions. Challenges include
-				i) the complexity of cross-modal modeling from language to contact, and ii) a lack of descriptive text for contact patterns.
-				To address these issues, we propose NL2Contact, a model that generates controllable contacts by leveraging staged diffusion models. 
-				Provided with a language description of the hand and contact, NL2Contact generates realistic and faithful 3D hand-object contacts. 
-				To train the model, we build ContactDescribe, the first dataset with hand-centered contact descriptions. 
-				It contains multi-level and diverse descriptions generated by large language models, based on carefully designed prompts (e.g. grasp action, grasp type, contact location, free finger status). 
-				We show applications of our model to grasp pose optimization and novel human grasp generation, both based on a textual contact description.
+				This paper introduces a novel task of controllable 3D hand-object contact modeling with natural language
+				descriptions. Challenges include
+				i) the complexity of cross-modal modeling from language to contact, and ii) a lack of descriptive text
+				for contact patterns.
+				To address these issues, we propose NL2Contact, a model that generates controllable contacts by
+				leveraging staged diffusion models.
+				Provided with a language description of the hand and contact, NL2Contact generates realistic and
+				faithful 3D hand-object contacts.
+				To train the model, we build ContactDescribe, the first dataset with hand-centered contact descriptions.
+				It contains multi-level and diverse descriptions generated by large language models, based on carefully
+				designed prompts (e.g. grasp action, grasp type, contact location, free finger status).
+				We show applications of our model to grasp pose optimization and novel human grasp generation, both
+				based on a textual contact description.
 			</td>
 		</tr>
 	</table>
 	<br>
 
-<!-- 	<hr>
+	<!-- 	<hr>
 	<center><h1>Talk</h1></center>
 	<p align="center">
 		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
 	</p> -->
 
-<!-- 	<table align=center width=800px>
+	<!-- 	<table align=center width=800px>
 		<br>
 		<tr>
 			<center>
@@ -278,7 +316,9 @@
 	</table> -->
 	<hr>
 
-	<center><h1>Framework</h1></center>
+	<center>
+		<h1>Framework</h1>
+	</center>
 
 	<table align=center width=420px>
 		<center>
@@ -292,8 +332,8 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:950px" src="./resources/Fig2.PNG"/></td>
-				</center>
+			<td><img class="round" style="width:950px" src="./resources/Fig2.PNG" /></td>
+			</center>
 			</td>
 		</tr>
 	</table>
@@ -301,11 +341,16 @@
 		<center>
 			<tr>
 				<td align=center width=400px>
-					NL2Contact pipeline. 
-					We propose a novel method to model 3D hand-object contact using language description. 
-					Our framework is composed of 1) a Text-to-Hand-Object Fusion module, efficiently fusing the geometry information from both point clouds and semantic information from natural language, 
-					2) a staged latent diffusion model to first generate the hand pose fitting the hand description and then generate the 3D hand-object contact map conditioned on the descriptions and the generated hand pose. 
-					3) contact optimization, which iteratively optimizes the hand pose using the generated contact. We also added a switch to toggle between its application for grasp pose optimization and human grasp generation.
+					NL2Contact pipeline.
+					We propose a novel method to model 3D hand-object contact using language description.
+					Our framework is composed of 1) a Text-to-Hand-Object Fusion module, efficiently fusing the geometry
+					information from both point clouds and semantic information from natural language,
+					2) a staged latent diffusion model to first generate the hand pose fitting the hand description and
+					then generate the 3D hand-object contact map conditioned on the descriptions and the generated hand
+					pose.
+					3) contact optimization, which iteratively optimizes the hand pose using the generated contact. We
+					also added a switch to toggle between its application for grasp pose optimization and human grasp
+					generation.
 				</td>
 			</tr>
 		</center>
@@ -313,7 +358,9 @@
 
 	<hr>
 
-	<center><h1>Dataset</h1></center>
+	<center>
+		<h1>Dataset</h1>
+	</center>
 
 	<table align=center width=420px>
 		<center>
@@ -327,8 +374,8 @@
 		<tr>
 			<td align=center width=600px>
 				<center>
-					<td><img class="round" style="width:600px" src="./resources/Fig3.PNG"/></td>
-				</center>
+			<td><img class="round" style="width:600px" src="./resources/Fig3.PNG" /></td>
+			</center>
 			</td>
 		</tr>
 	</table>
@@ -336,14 +383,15 @@
 		<center>
 			<tr>
 				<td align=center width=400px>
-					An example of the dataset with multi-level language descriptions. 
-					Given the proposed hand-centered contact prompts, our dataset leverages ChatGPT3 to generate multi-level and diverse free-form text descriptions of contact patterns.
+					An example of the dataset with multi-level language descriptions.
+					Given the proposed hand-centered contact prompts, our dataset leverages ChatGPT3 to generate
+					multi-level and diverse free-form text descriptions of contact patterns.
 				</td>
 			</tr>
 		</center>
 	</table>
 
-<!-- 	<table align=center width=800px>
+	<!-- 	<table align=center width=800px>
 		<br>
 		<tr><center>
 			<span style="font-size:28px">&nbsp;<a href='https://github.com/eldentse/collab-hand-object/'>[GitHub]</a>
@@ -353,16 +401,19 @@
 	<br>
 	<hr>
 	<table align=center width=800px>
-		<center><h1>Paper and Supplementary Material</h1></center>
+		<center>
+			<h1>Paper and Supplementary Material</h1>
+		</center>
 		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.PNG"/></a></td>
-			<td><span style="font-size:14pt">Zhongqun Zhang, Hengfei Wang, Ziwei Yu, Yihua Cheng, Angela Yao and Hyung Jin Chang<br>
-				<b>NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</b><br>
-				In ECCV, 2024.<br>
-<!-- 				(hosted on <a href="">ArXiv</a>)<br> -->
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-				<span style="font-size:4pt"><a href=""><br></a>
-				</span>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.PNG" /></a></td>
+			<td><span style="font-size:14pt">Zhongqun Zhang, Hengfei Wang, Ziwei Yu, Yihua Cheng, Angela Yao and Hyung
+					Jin Chang<br>
+					<b>NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model</b><br>
+					In ECCV, 2024.<br>
+					<!-- 				(hosted on <a href="">ArXiv</a>)<br> -->
+					<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+					<span style="font-size:4pt"><a href=""><br></a>
+					</span>
 			</td>
 		</tr>
 	</table>
@@ -370,17 +421,21 @@
 
 	<table align=center width=600px>
 		<tr>
-<!-- 			<td align=center><span style="font-size:14pt"><center>
+			<!-- 			<td align=center><span style="font-size:14pt"><center>
 				<a href="./resources/bibtex.txt">[Bibtex]</a>
 			</center></td> -->
-				
-			<td align=center><span style="font-size:14pt"><center>
-				<a href="">[Paper]</a>
-			</center></td>
-			
-			<td align=center><span style="font-size:14pt"><center>
-				<a href="">[Supplementary]</a>
-			</center></td>
+
+			<td align=center><span style="font-size:14pt">
+					<center>
+						<a href="">[Paper]</a>
+					</center>
+			</td>
+
+			<td align=center><span style="font-size:14pt">
+					<center>
+						<a href="">[Supplementary]</a>
+					</center>
+			</td>
 		</tr>
 	</table>
 
@@ -391,14 +446,27 @@
 		<tr>
 			<td width=400px>
 				<left>
-					<center><h1>Acknowledgements</h1></center>
-					This research/project is supported by the National Research Foundation Singapore and DSO National Laboratories under the AI Singapore Programme (Award Number: AISG2-RP-2020-016), China Scholarship Council (CSC) Grant No. 202208060266.
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+					<center>
+						<h1>Acknowledgements</h1>
+					</center>
+					This research/project is supported by the National Research Foundation Singapore and DSO National
+					Laboratories under the AI Singapore Programme (Award Number: AISG2-RP-2020-016), China Scholarship
+					Council (CSC) Grant No. 202208060266.
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a
+						href="http://richzhang.github.io/">Richard Zhang</a> for a <a
+						href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found
+					<a href="https://github.com/richzhang/webpage-template">here</a>.
 				</left>
 			</td>
 		</tr>
 	</table>
 
-<br>
+	<br>
+
+	<script type="text/javascript" id="clustrmaps"
+		src="//clustrmaps.com/map_v2.js?d=biMrtbH-vOXCHcYlQkDGQDEF08t4HGBj7CE5tRBKqng">
+		</script>
+
 </body>
+
 </html>
